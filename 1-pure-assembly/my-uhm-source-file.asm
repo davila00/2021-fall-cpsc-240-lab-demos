@@ -1,4 +1,19 @@
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; CPSC 240, Professor P
+;
+; This folder is a demonstration of writing a program
+;	in pure assembly language.
+; It contains both a *.asm source file,
+;	and a Makefile (so we can use GNU Make to build)
+;
+; You can use any editor of your choosing to view this file,
+; 	but the indentation may only look correct if you set
+;	your editor to use a tab size of 4, like me.
+; Geany and other GUI editors make it easy to change this setting.
+; If you want to edit your files in the console with the "nano" program,
+;	here is some information on changing the tab size there as well:
+; https://electrictoolbox.com/setting-tab-size-in-nano/
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -54,9 +69,14 @@ hello:
 
 goodbye:
 	
-	;
+	; TODO: The code, in its current form, will cause a segfault.
+	;	We need to fix this by properly exiting with a syscall, NOT a return statement.
+	;	Return statements are required when linking with C libraries and starting
+	;		an entry point of main.
+	;	Linking a pure assembly program with _start for an entry point does not work
+	;		properly with the following lines.
+	;	We'll fix this during our next lab!
 	mov rax, 0
-	
 	ret
 
 
