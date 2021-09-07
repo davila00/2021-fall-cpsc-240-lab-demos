@@ -1,10 +1,9 @@
 
 
-# TODO
+# TODO (optional)
 
-TODO for this demo:
+* .PHONY targets
 
-* Hybrid program example with main() inside an assembly source file
+* Separate targets for each object file and excutable
 
-* Compile with gcc instead of ld (obv)
 
