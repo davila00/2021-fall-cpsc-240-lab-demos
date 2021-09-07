@@ -1,30 +1,21 @@
 
 
-# TODOs:
-# - Link all object files with *.o
-# - Start using variables
+# TODO:
+#	Variables
+#	.PHONY targets
+# 	Separate targets for each object file and executable
+#	Clean target
 
 
-# We're going to keep things simple and only use a single target
-#	to compile our program.
-# With GNU Make, the first target is always
-#	considered the default target.
-# Thus, the build-and-run target will be run by default when you
-#	execute "make" on the command line.
-#
-# Notice the target name appears on the left, then with a colon.
-# Notice then, each line underneath is indented with a tab and is
-#	actually a shell command, which GNU Make will run for the target.
-# You may prepend a "@" character before a shell command to suppress
-#	the printing of the command (it will merely execute the command).
-#
-# You should visit the following links to learn more about GNU Make:
-#	https://www.gnu.org/software/make/manual/make.html
-#	https://www.opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/
-#	(you should also search the web and follow many tutorials until you're more comfortable)
-
-
-#
+# Notice we have a dependency here.
+# The "build" target is a dependency of the "run" target.
+# We denote this by adding the build target's name
+#	to the right of the run target's colon
+# This means that whenever we execute the "run" target,
+#	the "build" target gets ran first.
+# This makes sense because we would want to be sure
+#	our executable is built before trying to launch
+#	the program.
 run:	build
 	@echo "Running program!"
 	./my-program
