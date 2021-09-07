@@ -23,6 +23,12 @@ section	.data
 ;;;;;
 ; System calls
 SYS_WRITE			equ		1
+SYS_EXIT			equ		60
+
+
+;;;;;
+; Exit Codes
+EXIT_SUCCESS			equ		0
 
 
 ;;;;;
@@ -69,25 +75,11 @@ hello:
 
 goodbye:
 	
-	; TODO: The code, in its current form, will cause a segfault.
-	;	We need to fix this by properly exiting with a syscall, NOT a return statement.
-	;	Return statements are required when linking with C libraries and starting
-	;		an entry point of main.
-	;	Linking a pure assembly program with _start for an entry point does not work
-	;		properly with the following lines.
-	;	We'll fix this during our next lab!
-	mov rax, 0
-	ret
-
-
-
-
-
-
-
-
-
-
+	; Use a system call
+	; to exit gracefully
+	mov rax, SYS_EXIT	; Load syscall code for 'return' into rax
+	mov rdi, EXIT_SUCCESS	; Load our program's return code (0=Success) into rdi
+	syscall
 
 
 
