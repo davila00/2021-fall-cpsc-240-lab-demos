@@ -4,6 +4,6 @@
 
 * .PHONY targets
 
-* Separate targets for each object file and excutable
+* Separate targets for each object file and executable
 
 
