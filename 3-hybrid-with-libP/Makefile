@@ -56,7 +56,7 @@ build:	$(BIN)
 $(BIN):
 	yasm -f elf64 -gdwarf2 my-assembly-main.asm -o my-assembly-main.o
 	gcc -Wall -m64 -gdwarf-2 -c my-c-stuff.c -o my-c-stuff.o
-	gcc -Wall -m64 -gdwarf-2 -no-pie *.o -o my-program
+	gcc -Wall -m64 -gdwarf-2 -no-pie *.o *.so -o my-program
 	@echo "Done"
 
 
