@@ -3,6 +3,8 @@
 
 This lab demo is pending. We will show how to add the *libPuhfessorP* shared object file to your program, and some of its functionality.
 
+Note to self: Solution for the assignments already have working examples I can draw inspiration from.
+
 ## Agenda
 
 Try to do the following for this demo:
