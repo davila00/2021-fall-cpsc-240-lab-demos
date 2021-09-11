@@ -31,6 +31,8 @@ Stuff left to demo:
 
 * Make: PHONY targets
 
+## Stuff for next demo folder
+
 * Make: Multiple targets that properly utilize dependencies
 
   * Show why the current $(BIN) target didn't rebuild the program when appropriate
