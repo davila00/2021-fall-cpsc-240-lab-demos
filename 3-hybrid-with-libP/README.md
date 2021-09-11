@@ -15,6 +15,10 @@ Stuff left to demo:
 
 * Print confirmation after user input that contains the inputted value
 
+* Show the .bss section and how it can be used to create an input buffer
+
+    * Reminder: Future assignments may require a stack-based buffer, rather than a global .bss based buffer
+
 * Probably want to demonstrate math related to Assignment 1 at this point, so they can get a solid start
 
     * Talk about the concept in general (multiply input by pi-numerator, then divide result by pi-denominator)
