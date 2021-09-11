@@ -95,7 +95,7 @@ new_stuff:
 	
 	; Practive receiving an integer
 	call libPuhfessorP_inputSignedInteger64
-	;inc rax			; Increase the value returned by 1
+	inc rax					; Increase the value returned by 1
 	mov [MY_INT], rax		; Kinda like saying MY_INT = rax
 	mov rdi, [MY_INT]
 	call libPuhfessorP_printSignedInteger64

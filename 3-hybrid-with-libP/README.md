@@ -9,10 +9,17 @@ Note to self: Solution for the assignments already have working examples I can d
 
 Stuff left to demo:
 
+* Add in a CRLF function and use it to format output a little better
+
+* Print user input prompt messages, before taking input
+
+* Print confirmation after user input that contains the inputted value
+
 * Probably want to demonstrate math related to Assignment 1 at this point, so they can get a solid start
 
-  * Talk about the concept in general (multiply input by pi-numerator, then divide result by pi-denominator)
-  * Multiplication/division instructions as well
+    * Talk about the concept in general (multiply input by pi-numerator, then divide result by pi-denominator)
+
+    * Multiplication/division instructions as well
 
 * Make: clean
 
