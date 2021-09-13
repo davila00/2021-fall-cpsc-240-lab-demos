@@ -3,11 +3,25 @@
 
 This lab demo was used to show how to add the *libPuhfessorP* shared object file to your program, and some of its functionality.
 
-Note to self: Solution for the assignments already have working examples I can draw inspiration from.
-
 ## Agenda
 
-Stuff left to demo:
+Stuff left to demo.
+
+### Makefile Stuffs
+
+Our Makefile thus far isn't very good. The build targets won't rebuild the executable if a source is changed, and we haven't explained variables yet!
+
+* Add proper dependencies to the $(BIN) target, so it knows when to rebuild the executable.
+
+    * Show why the current $(BIN) target didn't rebuild the program when appropriate
+
+* Make: clean
+
+* Make: variables
+
+* Make: PHONY targets
+
+### Assembly Stuffs
 
 * Add in a CRLF function and use it to format output a little better
 
@@ -17,7 +31,13 @@ Stuff left to demo:
 
 * Show the .bss section and how it can be used to create an input buffer
 
+    * Reference: Section 4.5 in the book
+
+    * Idea: Show how to ask libP to input a user string as text to a byte buffer in the .bss section
+
     * Reminder: Future assignments may require a stack-based buffer, rather than a global .bss based buffer
+
+        * Talk about the difference between the data contained in the .bss and .data sections
 
 * Probably want to demonstrate math related to Assignment 1 at this point, so they can get a solid start
 
@@ -25,17 +45,17 @@ Stuff left to demo:
 
     * Multiplication/division instructions as well
 
-* Make: clean
+### For Next Demo
 
-* Make: variables
+Stuff for the next Demo (probably)
 
-* Make: PHONY targets
+* Hybrid where ```main()``` is inside the C program, and calls on an assembly function.
 
-## Stuff for next demo folder
+* Multiple targets that properly utilize dependencies.
 
-* Make: Multiple targets that properly utilize dependencies
 
-  * Show why the current $(BIN) target didn't rebuild the program when appropriate
 
-  * Fix targets so things get rebuild whenever needed (won't be required until probably Assignment 2)
+
+
+
 
