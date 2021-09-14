@@ -28,6 +28,10 @@ Each subdirectory is its own demonstration and should contain all files needed f
 
 Students won't need to use the Makefile at the root of this repository. It's just for me. Feel free to study it for your own learning.
 
+### libPuhfessorP.so
+
+Some subdirectory demos make use of the libPuhfessorP shared object. However, those shared objects are setup to be ignored by git. Therefore, a simple clone of this repository might not work as-is. You will need to manually copy+paste the latest copy of libPuhfessorP into each of those demo directories before they will work.
+
 ## Git Tags
 
 You may notice this repository also contains "git tags". You can view them with the following command:
