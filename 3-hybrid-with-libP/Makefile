@@ -14,11 +14,6 @@ BIN_NAME := my-program
 BIN := ./$(BIN_NAME)
 
 
-# TODO:
-# 	Separate targets for each object file and executable
-#	Clean target
-
-
 # "Phony" target to run our program. "Phony" means the target
 #	doesn't name an actual file/folder, but an action to take
 #
@@ -33,7 +28,7 @@ BIN := ./$(BIN_NAME)
 #	the program.
 run:	build
 	@echo "Running program!"
-	./my-program
+	$(BIN)
 .PHONY: run
 
 
@@ -51,20 +46,23 @@ build:	$(BIN)
 #	and you'll see that $(BIN) just expands to ./my-program
 # The job of this target is to build your entire program.
 
-# TODO: During class, begin linking *.so files as well, so the library works!
 
-$(BIN):
-	yasm -f elf64 -gdwarf2 my-assembly-main.asm -o my-assembly-main.o
-	gcc -Wall -m64 -gdwarf-2 -c my-c-stuff.c -o my-c-stuff.o
-	gcc -Wall -m64 -gdwarf-2 -no-pie *.o *.so -o my-program
-	@echo "Done"
+$(BIN):	my-assembly-main.o my-c-stuff.o
+	$(LINKER) $(LINKER_FLAGS) *.o *.so -o my-program
 
 
+my-assembly-main.o:	my-assembly-main.asm
+	$(ASM) $(ASM_FLAGS) my-assembly-main.asm -o my-assembly-main.o
 
 
+my-c-stuff.o: my-c-stuff.c
+	$(CC) $(CC_FLAGS) my-c-stuff.c -o my-c-stuff.o
 
 
-
+clean:
+	-rm *.o
+	-rm $(BIN)
+.PHONY: clean
 
 
 

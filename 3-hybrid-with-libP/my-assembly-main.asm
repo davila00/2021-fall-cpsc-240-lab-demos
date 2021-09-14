@@ -30,9 +30,17 @@ FD_STDERR			equ		2
 
 ;;;;;
 ; Strings
-HELLO_MESSAGE		db		"Hello, my name is Archibald Northbottom !!",13,10
+HELLO_MESSAGE		db		"Hello, my name is Archibald Northbottom !!"
 HELLO_MESSAGE_LEN	equ		$-HELLO_MESSAGE
 
+CRLF				db		13,10
+CRLF_LEN			equ		$-CRLF
+
+ASK_INPUT_MSG		db		"Please enter an unsigned 64-bit integer: "
+ASK_INPUT_MSG_LEN	equ		$-ASK_INPUT_MSG
+
+CONFIRM_INPUT_MSG		db		"You entered: "
+CONFIRM_INPUT_MSG_LEN	equ		$-CONFIRM_INPUT_MSG
 
 ;;;;;
 ; Hold inputted integers
@@ -75,6 +83,10 @@ hello:
 	mov rdx, HELLO_MESSAGE_LEN	; Provide the number of characters print
 	syscall
 
+	call crlf
+	call crlf
+	call crlf
+
 call_hybrid:
 	
 	call hybrid_cool
@@ -89,23 +101,53 @@ new_stuff:
 	; Expected parameters for all libP functions are found FUNCTIONS.md, in the libP deploy repo
 	mov rdi, 785323
 	call libPuhfessorP_printSignedInteger64
+	call crlf
 
 	mov rdi, -12762
 	call libPuhfessorP_printSignedInteger64
+	call crlf
 	
 	; Practive receiving an integer
+	mov rax, SYS_WRITE			; System call code goes into rax
+	mov rdi, FD_STDOUT			; Tell the system to print to STDOUT
+	mov rsi, ASK_INPUT_MSG		; Provide the memory location to start reading our characters to print
+	mov rdx, ASK_INPUT_MSG_LEN	; Provide the number of characters print
+	syscall
+	;
 	call libPuhfessorP_inputSignedInteger64
-	inc rax					; Increase the value returned by 1
-	mov [MY_INT], rax		; Kinda like saying MY_INT = rax
+	mov [MY_INT], rax			; Kinda like saying MY_INT = rax
+	;
+	mov rax, SYS_WRITE			; System call code goes into rax
+	mov rdi, FD_STDOUT			; Tell the system to print to STDOUT
+	mov rsi, CONFIRM_INPUT_MSG	; Provide the memory location to start reading our characters to print
+	mov rdx, CONFIRM_INPUT_MSG_LEN	; Provide the number of characters print
+	syscall
+	;
 	mov rdi, [MY_INT]
 	call libPuhfessorP_printSignedInteger64
-
+	call crlf
+	
 ;	Return to the caller
 goodbye:
 	
 	; It is a convention for return values to show up in rax
 	mov rax, EXIT_SUCCESS
 	ret
+
+
+
+
+crlf:
+	
+	;
+	mov rax, SYS_WRITE			; System call code goes into rax
+	mov rdi, FD_STDOUT			; Tell the system to print to STDOUT
+	mov rsi, CRLF				; Provide the memory location to start reading our characters to print
+	mov rdx, CRLF_LEN			; Provide the number of characters print
+	syscall
+	
+	ret
+
 
 
 
