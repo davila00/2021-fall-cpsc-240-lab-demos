@@ -11,8 +11,6 @@ This demo was used to show basic mathematical operations and print their results
 
 Stuff we should still do.
 
-* Review signed integer division again because we went over our time a few minutes and some people had to leave.
-
 * Addition and subtraction
 
 * Review the "inc" instruction
