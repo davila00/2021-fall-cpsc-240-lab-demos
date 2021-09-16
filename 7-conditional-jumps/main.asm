@@ -62,7 +62,7 @@ main:
 	mov rax, SYS_WRITE			; System call code goes into rax
 	mov rdi, FD_STDOUT			; Tell the system to print to STDOUT
 	mov rsi, HELLO_MESSAGE		; Provide the memory location to start reading our characters to print
-	mov rdx, HELLO_MESSAGE_LEN	; Provide the number of characters print
+	mov rdx, HELLO_MESSAGE_LEN	; Provide the number of characters to print
 	syscall
 	
 	; Let's implement the following IF statement:
@@ -80,7 +80,7 @@ coolDecisionArea:				; Name this IF/ELSE section
 	
 	cmp r12, r13				; Implement "if (r12 > r13)" with the cmp instruction
 	jg coolDecisionArea_true	; Jump to coolDecisionArea_true, if r12 was indeed more than r13
-	; jmp coolDecisionArea_false	; Jump to coolDecisionArea_false otherwise (jmp not needed, because execution will fall through)
+	; jmp coolDecisionArea_false	; Jump to coolDecisionArea_false otherwise (jump not needed, because execution will fall through)
 	
 coolDecisionArea_false:
 	
@@ -88,7 +88,7 @@ coolDecisionArea_false:
 	mov rax, SYS_WRITE			; System call code goes into rax
 	mov rdi, FD_STDOUT			; Tell the system to print to STDOUT
 	mov rsi, FALSE_MSG			; Provide the memory location to start reading our characters to print
-	mov rdx, FALSE_MSG_LEN		; Provide the number of characters print
+	mov rdx, FALSE_MSG_LEN		; Provide the number of characters to print
 	syscall
 	jmp coolDecisionArea_finished
 
@@ -98,9 +98,9 @@ coolDecisionArea_true:
 	mov rax, SYS_WRITE			; System call code goes into rax
 	mov rdi, FD_STDOUT			; Tell the system to print to STDOUT
 	mov rsi, TRUE_MSG			; Provide the memory location to start reading our characters to print
-	mov rdx, TRUE_MSG_LEN		; Provide the number of characters print
+	mov rdx, TRUE_MSG_LEN		; Provide the number of characters to print
 	syscall
-	jmp coolDecisionArea_finished
+	; jmp coolDecisionArea_finished (jump not needed, because execution will fall through)
 	
 ; When we get here, the IF block is done
 coolDecisionArea_finished:
@@ -122,7 +122,7 @@ crlf:
 	mov rax, SYS_WRITE			; System call code goes into rax
 	mov rdi, FD_STDOUT			; Tell the system to print to STDOUT
 	mov rsi, CRLF				; Provide the memory location to start reading our characters to print
-	mov rdx, CRLF_LEN			; Provide the number of characters print
+	mov rdx, CRLF_LEN			; Provide the number of characters to print
 	syscall
 	
 	ret
