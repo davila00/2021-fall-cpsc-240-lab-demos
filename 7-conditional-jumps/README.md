@@ -3,3 +3,9 @@
 
 This demo was used to show the use of conditional jumps to implement a basic IF/ELSE block
 
+## TODO
+
+Stuff that would be nice to do, if time provided
+
+* Explore other jumps, beyond just *jg*
+
