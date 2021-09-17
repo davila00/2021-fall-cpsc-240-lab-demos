@@ -3,7 +3,7 @@
 #
 *~
 *.o
-*.so
+libPuhfessorP.*.so
 my-program
 
 
