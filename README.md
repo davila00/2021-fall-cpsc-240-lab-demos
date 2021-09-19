@@ -13,7 +13,13 @@ Students won't need to use the Makefile at the root of this repository. It's jus
 
 ### libPuhfessorP.so
 
-Some subdirectory demos make use of the libPuhfessorP shared object. However, those shared objects are setup to be ignored by git. Therefore, a simple clone of this repository might not work as-is. You will need to manually copy+paste the latest copy of libPuhfessorP into each of those demo directories before they will work.
+Some subdirectory demos make use of the libPuhfessorP shared object. However, those shared objects are setup to be ignored by git. Therefore, a simple clone of this repository might not work as-is.
+
+You'll find each demo utilizing libPuhfessorP.so has a symlink inside that points to *libPuhfessorP.so* at the root of this repository. In turn, *libPuhfessorP.so* at the root of this repository is actually just another symlink which points to a specific version of that library.
+
+It is that specific version that should be downloaded and placed at the root of this repository for the demos to work. For example, at the time of this writing the latest SO file is *libPuhfessorP.v0.11.2.so*, which can be downloaded from the [Deploy Repository](https://github.com/puhfessor-p-cpsc-240/libPuhfessorP-deploy). You may download older versions of the SO by sifting through the list of commits.
+
+You will need to manually copy+paste the latest copy of libPuhfessorP into each of those demo directories before they will work.
 
 ## Git Tags
 
