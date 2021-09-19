@@ -19,8 +19,6 @@ You'll find each demo utilizing libPuhfessorP.so has a symlink inside that point
 
 It is that specific version that should be downloaded and placed at the root of this repository for the demos to work. For example, at the time of this writing the latest SO file is *libPuhfessorP.v0.11.2.so*, which can be downloaded from the [Deploy Repository](https://github.com/puhfessor-p-cpsc-240/libPuhfessorP-deploy). You may download older versions of the SO by sifting through the list of commits.
 
-You will need to manually copy+paste the latest copy of libPuhfessorP into each of those demo directories before they will work.
-
 ## Git Tags
 
 You may notice this repository also contains "git tags". You can view them with the following command:
