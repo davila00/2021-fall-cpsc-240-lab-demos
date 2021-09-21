@@ -47,7 +47,7 @@ This section contains topics that were already covered, as a reminder to myself.
 
 * Advanced Makefile with variables, phony targets, and a different target for each source/object pair, and the linking step.
 
-* Integer multiplication and division
+* Integer math
 
 
 ## Topics to Cover
@@ -58,8 +58,7 @@ This section contains some future topics that will be covered if time permits.
 
 The following demos still have things left (notes are inside their sub-folders):
 
-* 5 - Integer Math
-* 7 - Conditional Jumps
+* Nada
 
 ### BSS Section for Input Buffer
 

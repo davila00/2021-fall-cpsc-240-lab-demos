@@ -18,8 +18,8 @@ SYS_EXIT			equ		60
 
 ;;;;;
 ; Exit Codes
-EXIT_SUCCESS			equ		0
-EXIT_FUN_TEST			equ		214
+EXIT_SUCCESS		equ		0
+EXIT_FUN_TEST		equ		214
 
 
 ;;;;;
@@ -131,6 +131,63 @@ divisionTest:
 	
 	call crlf
 
+incrementTest:
+	
+	mov r12, 104274
+	;
+	mov rdi, r12
+	call libPuhfessorP_printSignedInteger64
+	call crlf
+	
+	inc r12
+	mov rdi, r12
+	call libPuhfessorP_printSignedInteger64
+	call crlf
+
+
+additionTest:
+	
+	; Add registers
+	mov r12, 781347
+	mov r13, 182744
+	add r12, r13
+	;
+	; Should print: 964091
+	mov rdi, r12
+	call libPuhfessorP_printSignedInteger64
+	call crlf
+
+	; Add immediate
+	mov r12, 781347
+	add r12, 87234786
+	;
+	; Should print: 88016133
+	mov rdi, r12
+	call libPuhfessorP_printSignedInteger64
+	call crlf
+
+
+subtractionTest:
+	
+	; Subtract registers
+	mov r12, 41234
+	mov r13, 981289472
+	sub r12, r13
+	;
+	; Should print: -981248238
+	mov rdi, r12
+	call libPuhfessorP_printSignedInteger64
+	call crlf
+	
+	; Subtract immediate
+	mov r12, 19827
+	sub r12, 2762
+	;
+	; Should print: 17065
+	mov rdi, r12
+	call libPuhfessorP_printSignedInteger64
+	call crlf
+	
 ;	Return to the caller
 goodbye:
 	
