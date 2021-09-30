@@ -1,5 +1,7 @@
 
 
+# Reference: https://visualgdb.com/gdbreference/commands/x
+
 b main3.asm:42
 b main3.asm:57
 b main3.asm:67
