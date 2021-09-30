@@ -1,0 +1,10 @@
+
+b main2.asm:30
+b main2.asm:31
+b main2.asm:33
+b main2.asm:34
+b main2.asm:42
+
+run
+
+

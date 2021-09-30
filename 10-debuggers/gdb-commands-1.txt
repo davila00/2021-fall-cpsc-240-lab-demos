@@ -1,0 +1,37 @@
+
+
+b main1.asm:17
+b main1.asm:18
+break main1.asm:19
+b main1.asm:20
+b main1.asm:21
+b main1.asm:22
+b main1.asm:25
+
+run
+
+info registers
+continue
+
+info register r10
+c
+
+i r r11
+c
+
+i r r12
+c
+
+i r r13
+c
+
+i r r14
+c
+
+i r r15
+c
+
+
+
+
+

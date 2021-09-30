@@ -1,0 +1,79 @@
+
+
+b main3.asm:42
+b main3.asm:57
+b main3.asm:67
+b main3.asm:75
+
+run
+
+i r r11
+x/ld $r11
+c
+
+i r r12
+x/s $r12
+x/s ($r12 + 3)
+x/c $r12
+x/5c $r12
+x/5c ($r12 + 2)
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+x/s $r12
+x/c $r12
+c
+
+
+
+
+
+
+
