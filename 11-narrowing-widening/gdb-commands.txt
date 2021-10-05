@@ -1,0 +1,53 @@
+
+
+b main.asm:49
+b main.asm:55
+b main.asm:60
+b main.asm:73
+b main.asm:78
+
+run
+
+
+#################
+### Narrowing ###
+
+print "*** BEGIN NARROWING ***"
+
+print "Printing contents of MY_BYTE after assigning 50"
+x/db &MY_BYTE
+c
+
+print "Printing contents of MY_BYTE after assigning 200. Notice the value is incorrect because 200 is beyond the range of a signed 8-bit integer."
+x/db &MY_BYTE
+x/tb &MY_BYTE
+print "Yet the 16-bit version of rax (ax) still works:"
+i r ax
+# h stands for "half word", or two bytes (inconsistent from yasm)
+x/dh &MY_WORD
+x/th &MY_WORD
+c
+
+print "Printing contents of MY_BYTE after assigning -10 into rax, then narrowing into 1 byte."
+x/db &MY_BYTE
+x/tb &MY_BYTE
+c
+
+################
+### Widening ###
+
+print "*** BEGIN WIDENING ***"
+
+print "Printing contents of r10 after moving MY_BYTE (-11) into it, with the invalid mov instruction. Notice how it is isn't correct. (junk data)"
+i r r10
+i r ax
+c
+
+print "Printing contents of r10 after moving MY_BYTE into it, with the correct movsx instruction. Notice the sign bit was extended correctly."
+i r r10
+c
+
+
+
+q
+
