@@ -49,6 +49,15 @@ This section contains topics that were already covered, as a reminder to myself.
 
 * Integer math
 
+* Register preservation
+
+* Conditional jumps
+
+* Local variables / Local array on the stack
+
+* Hybrid function calls by value, with pointers, and with floats
+
+* Addressing modes
 
 ## Topics to Cover
 
@@ -60,37 +69,6 @@ The following demos still have things left (notes are inside their sub-folders):
 
 * Nada
 
-### BSS Section for Input Buffer
-
-* Show the .bss section and how it can be used to create an input buffer
-
-    * Reference: Section 4.5 in the book
-
-    * Idea: Show how to ask libP to input a user string as text to a byte buffer in the .bss section
-
-    * Reminder: Future assignments may require a stack-based buffer, rather than a global .bss based buffer
-
-        * Talk about the difference between the data contained in the .bss and .data sections
-
-### Loops
-
-Demo the following concepts:
-
-* A ```for``` loop that uses a counter.
-
-* A ```for``` loop that uses a counter inside an offset computation in order to modify an array
-
-* A ```while``` loop that increments a pointer until it reaches an endpoint in order to modify an array
-
-### Function Arguments by Reference
-
-Show the following:
-
-* Send a pointer as an argument to a ```call``, which can then be used to modify a variable or array
-
-* From an assembly function, ```call``` a C function that takes pointers to variables as arguments. Then use those pointers to modify the variables from within C. This would be especially useful for Assignment 4. Sample prototype:
-
-    * ```void functionWithPointers(double * a, double * b, double * c);```
 
 
 
