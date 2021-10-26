@@ -1,0 +1,27 @@
+
+
+b main.asm:37
+b main.asm:38
+b main.asm:39
+b main.asm:40
+b main.asm:41
+b main.asm:42
+b main.asm:43
+b main.asm:44
+b main.asm:45
+b main.asm:46
+
+b main.asm:52
+b main.asm:53
+b main.asm:54
+b main.asm:55
+b main.asm:56
+b main.asm:57
+b main.asm:58
+b main.asm:59
+
+run
+
+
+
+
