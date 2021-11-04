@@ -1,8 +1,7 @@
 
 # Lab Demo - Inputting Floats With SScanf
 
-This lab demo shows how to input a float from the user, using sscanf.
+This lab demo shows how to input a float from the user, using sscanf and fgets.
 
-TODO: The user-input part.
 
 
