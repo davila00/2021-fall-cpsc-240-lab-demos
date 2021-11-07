@@ -45,7 +45,7 @@ int main () {
     	Actually get input from the user.
     	This shows a complete example of how you could take input in a program.
 		Note: This is just an example and is not meant to be copy/pasted or taken literally.
-			For example, printint "Please enter a float" is probably not part of any assignment.
+			For example, printing "Please enter a float" is probably not part of any assignment.
     */
     printf("Please enter a float: ");
     if (fgets(input, LINE_MAX, stdin) == NULL) {
