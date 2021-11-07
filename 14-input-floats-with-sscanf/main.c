@@ -41,15 +41,15 @@ int main () {
 	returnValue = sscanf( input, "%lf", &d );
 	printf("%d ==> %lf\n", returnValue, d);
 	
-    /*
-    	Actually get input from the user.
-    	This shows a complete example of how you could take input in a program.
+	/*
+		Actually get input from the user.
+		This shows a complete example of how you could take input in a program.
 		Note: This is just an example and is not meant to be copy/pasted or taken literally.
 			For example, printing "Please enter a float" is probably not part of any assignment.
-    */
-    printf("Please enter a float: ");
-    if (fgets(input, LINE_MAX, stdin) == NULL) {
-    	printf("You entered no line!\n");
+	*/
+	printf("Please enter a float: ");
+	if (fgets(input, LINE_MAX, stdin) == NULL) {
+		printf("You entered no line!\n");
 	}
 	else {
 		// Will return 0 for invalid, -1 for blank input
@@ -67,4 +67,3 @@ int main () {
 	
     return(0);
 }
-
